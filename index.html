@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#eef2f7" />
+    <title>Sydney Gahunia — Systems Design Engineering</title>
+    <meta
+      name="description"
+      content="Sydney Gahunia — Systems Design Engineering student building human-centred AI tools. A portfolio designed as a journey."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Sydney Gahunia — Systems Design Engineering" />
+    <meta
+      property="og:description"
+      content="Sydney Gahunia — Systems Design Engineering student. A cinematic journey through AI workflow prototyping, human-centred systems design, and product thinking."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fonts: Anton (display), Inter (body), Space Mono (HUD/mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ===================================================================
+         PRELOADER — boarding-pass ticket
+    ==================================================================== -->
+    <div class="preloader" role="status" aria-live="polite">
+      <div class="ticket">
+        <div class="ticket__top">
+          <div class="ticket__row ticket__brand">
+            <span>BOARDING PASS — SYD ✈ PORTFOLIO</span>
+            <span class="ticket__gate">GATE 01</span>
+          </div>
+          <div class="ticket__passenger">
+            <span class="ticket__k">PASSENGER</span>
+            <span class="ticket__v">GAHUNIA / SYDNEY</span>
+          </div>
+          <div class="ticket__meta">
+            <div><span class="ticket__k">FROM</span><span class="ticket__v">SYD</span></div>
+            <div><span class="ticket__k">TO</span><span class="ticket__v">PORTFOLIO</span></div>
+            <div><span class="ticket__k">SEAT</span><span class="ticket__v">01A</span></div>
+            <div><span class="ticket__k">CLASS</span><span class="ticket__v">FIRST</span></div>
+          </div>
+        </div>
+
+        <div class="ticket__perf" aria-hidden="true"></div>
+
+        <div class="ticket__bottom">
+          <div class="ticket__loadrow">
+            <span class="ticket__k">LOADING ROUTE</span>
+            <span class="ticket__pct"><span data-preloader-pct>000</span>%</span>
+          </div>
+          <div class="ticket__bar">
+            <span class="ticket__bar-fill" data-preloader-bar></span>
+          </div>
+          <div class="ticket__stub">
+            <span>N 43.4723° · W 80.5449°</span>
+            <span>EST. 2025 — WORLDWIDE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================================
+         NAV — fixed minimal
+    ==================================================================== -->
+    <header class="nav" aria-label="Primary">
+      <a class="nav__brand" href="#top" data-scroll>
+        S.G — <span>TRAVELLER / BUILDER</span>
+      </a>
+      <nav class="nav__links">
+        <a href="#work" data-scroll>WORK</a>
+        <a href="#finale" data-scroll>CONTACT</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <!-- =================================================================
+           HERO — pinned 360° orbit
+      ================================================================== -->
+      <section id="hero" class="hero" aria-label="Introduction">
+        <div class="hero__sticky">
+          <canvas id="hero-canvas" class="seq-canvas"></canvas>
+          <div class="hero__scrim" aria-hidden="true"></div>
+
+          <div class="hero__content">
+            <h1 class="hero__title">
+              <span class="hero__line">
+                <span class="hero__letter">S</span><span class="hero__letter">Y</span
+                ><span class="hero__letter">D</span><span class="hero__letter">N</span
+                ><span class="hero__letter">E</span><span class="hero__letter">Y</span>
+              </span>
+              <span class="hero__line">
+                <span class="hero__letter">G</span><span class="hero__letter">A</span
+                ><span class="hero__letter">H</span><span class="hero__letter">U</span
+                ><span class="hero__letter">N</span><span class="hero__letter">I</span
+                ><span class="hero__letter">A</span>
+              </span>
+            </h1>
+
+            <p class="hero__subtitle" aria-label="Systems Design Engineering Student">
+              <span class="hero__sub-char">S</span><span class="hero__sub-char">Y</span
+              ><span class="hero__sub-char">S</span><span class="hero__sub-char">T</span
+              ><span class="hero__sub-char">E</span><span class="hero__sub-char">M</span
+              ><span class="hero__sub-char">S</span><span class="hero__sub-char">&nbsp;</span
+              ><span class="hero__sub-char">D</span><span class="hero__sub-char">E</span
+              ><span class="hero__sub-char">S</span><span class="hero__sub-char">I</span
+              ><span class="hero__sub-char">G</span><span class="hero__sub-char">N</span
+              ><span class="hero__sub-char">&nbsp;</span><span class="hero__sub-char">E</span
+              ><span class="hero__sub-char">N</span><span class="hero__sub-char">G</span
+              ><span class="hero__sub-char">I</span><span class="hero__sub-char">N</span
+              ><span class="hero__sub-char">E</span><span class="hero__sub-char">E</span
+              ><span class="hero__sub-char">R</span><span class="hero__sub-char">I</span
+              ><span class="hero__sub-char">N</span><span class="hero__sub-char">G</span
+              ><span class="hero__sub-char">&nbsp;</span><span class="hero__sub-char">S</span
+              ><span class="hero__sub-char">T</span><span class="hero__sub-char">U</span
+              ><span class="hero__sub-char">D</span><span class="hero__sub-char">E</span
+              ><span class="hero__sub-char">N</span><span class="hero__sub-char">T</span>
+            </p>
+
+            <div class="hero__routeline" aria-hidden="true">
+              <svg viewBox="0 0 320 12" width="320" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  data-route-line
+                  d="M2 6 L318 6"
+                  stroke="var(--emerald)"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                />
+                <circle cx="2" cy="6" r="2.4" fill="var(--emerald)" />
+                <circle cx="318" cy="6" r="2.4" fill="var(--emerald)" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- HUD corners -->
+          <div class="hud hud--tl">N 43.4723° &nbsp;W 80.5449°</div>
+          <div class="hud hud--tr">DEPARTURES — GATE 01</div>
+          <div class="hud hud--bl">
+            SCROLL TO BEGIN JOURNEY
+            <span class="hud__chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 14" width="20" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 2 L12 11 L22 2" stroke="var(--emerald)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+          </div>
+          <div class="hud hud--br">EST. 2025 — WORLDWIDE</div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           ABOUT — passenger profile
+      ================================================================== -->
+      <section id="about" class="about" aria-label="About Sydney">
+        <canvas id="builder-canvas" class="seq-canvas about__canvas"></canvas>
+        <div class="about__scrim" aria-hidden="true"></div>
+
+        <div class="about__inner">
+          <p class="section-label about__label">PASSENGER PROFILE — WHO I AM</p>
+
+          <div class="about__grid">
+            <div class="about__text">
+              <h2 class="about__title">
+                <span class="about__line"><span class="about__line-inner">TRAVELLER. BUILDER.</span></span>
+                <span class="about__line"><span class="about__line-inner">PROBLEM-SOLVER.</span></span>
+              </h2>
+
+              <p class="about__body">
+                I'm Sydney — a Systems Design Engineering student at the University of Waterloo who
+                likes building things that make everyday systems easier to use. Most recently, that
+                meant designing AI chatbot and voice-assistant prototypes at Humber River Health to
+                help hospital staff get technical support faster and make it easier for callers to
+                reach the right department.
+              </p>
+              <p class="about__body">
+                I'm especially interested in human-centred AI and healthcare technology. That
+                interest also led me to build an app inspired by my own experience with SVT,
+                designed to help patients track and better understand their heart episodes.
+              </p>
+              <p class="about__body">
+                Off the clock, I'm usually travelling somewhere new, leading STEM workshops, or
+                showing prospective students around Waterloo Engineering as a faculty ambassador.
+              </p>
+            </div>
+
+            <div class="about__passport">
+              <div class="passport">
+                <div class="passport__row">
+                  <span class="passport__k">NAME</span>
+                  <span class="passport__v">GAHUNIA / SYDNEY</span>
+                </div>
+                <div class="passport__row">
+                  <span class="passport__k">STATUS</span>
+                  <span class="passport__v">SYSTEMS DESIGN ENG · UWATERLOO</span>
+                </div>
+                <div class="passport__row">
+                  <span class="passport__k">BASE</span>
+                  <span class="passport__v">MARKHAM</span>
+                </div>
+                <div class="passport__row">
+                  <span class="passport__k">CURRENT</span>
+                  <span class="passport__v">AI PROTOTYPING IN HEALTHCARE</span>
+                </div>
+                <div class="passport__row">
+                  <span class="passport__k">INTERESTS</span>
+                  <span class="passport__v">TRAVEL · DANCE · SKIING</span>
+                </div>
+
+                <div class="passport__mrz" aria-hidden="true">
+                  <span class="passport__mrz-line">P&lt;CANGAHUNIA&lt;&lt;SYDNEY&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+                  <span class="passport__mrz-line">YYZ&lt;&lt;WATERLOO&lt;ENG&lt;2029&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;4</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           STATS — travel log impact strip
+      ================================================================== -->
+      <section id="stats" class="stats" aria-label="Impact to date">
+        <div class="stats__inner">
+          <p class="section-label">TRAVEL LOG — IMPACT TO DATE</p>
+
+          <div class="stats__connector" aria-hidden="true">
+            <svg viewBox="0 0 1000 12" preserveAspectRatio="none" width="100%" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path data-route-line d="M4 6 L996 6" stroke="var(--emerald)" stroke-width="1" stroke-dasharray="2 6" stroke-linecap="round" />
+            </svg>
+          </div>
+
+          <div class="stats__grid">
+            <div class="stat">
+              <div class="stat__numwrap">
+                <span class="stat__num" data-count="700" data-suffix="+">0+</span>
+              </div>
+              <span class="stat__cap">hospital staff supported through AI chatbot work</span>
+            </div>
+
+            <div class="stat">
+              <div class="stat__numwrap">
+                <span class="stat__num" data-count="800" data-suffix="+">0+</span>
+              </div>
+              <span class="stat__cap">students reached through STEM workshops</span>
+            </div>
+
+            <div class="stat">
+              <div class="stat__numwrap">
+                <span class="stat__num" data-count="2" data-suffix="">0</span>
+              </div>
+              <span class="stat__cap">healthcare AI prototypes built</span>
+            </div>
+
+            <div class="stat">
+              <div class="stat__numwrap">
+                <span class="stat__num" data-count="2" data-suffix="">0</span>
+              </div>
+              <span class="stat__cap">co-op experiences across healthcare and technical systems</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           WORK — boarding-pass cards
+      ================================================================== -->
+      <section id="work" class="work" aria-label="Selected work">
+        <p class="section-label work__label">DESTINATIONS — SELECTED WORK</p>
+        <div class="work__grid">
+          <!-- SG-001 -->
+          <article class="pass-card">
+            <div class="pass-card__stamp" aria-hidden="true">
+              <svg data-stamp viewBox="0 0 96 96" width="72" height="72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="48" cy="48" r="42" stroke="var(--peach)" stroke-width="2.5" />
+                <text x="48" y="53" text-anchor="middle" fill="var(--peach-ink)" font-family="'Space Mono', monospace" font-size="13" font-weight="700" letter-spacing="1">APPROVED</text>
+              </svg>
+            </div>
+            <div class="pass-card__head">
+              <div class="route-header">
+                <span class="route-node">PROBLEM</span>
+                <span class="route-track"><span class="route-plane">✈</span></span>
+                <span class="route-node">SOLUTION</span>
+              </div>
+              <span class="pass-card__code">FLT SG-001</span>
+            </div>
+            <div class="pass-card__perf" aria-hidden="true"></div>
+            <div class="pass-card__body">
+              <h3 class="pass-card__title">IT Help Desk AI Chatbot</h3>
+              <p class="pass-card__pitch">
+                An AI chatbot prototype designed to help hospital staff get faster support for
+                common IT issues.
+              </p>
+              <ul class="pass-card__chips">
+                <li>NODE.JS · EXPRESS</li>
+                <li>GPT-4.1 FUNCTION CALLING</li>
+                <li>RETELL VOICE SDK</li>
+                <li>ELEVENLABS VOICE</li>
+                <li>TICKET ESCALATION WEBHOOKS</li>
+              </ul>
+              <div class="pass-card__arc" aria-hidden="true">
+                <svg viewBox="0 0 260 44" width="100%" height="44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="pass-card__arc-path" d="M8 34 Q 130 -6 252 34" stroke="var(--emerald)" stroke-width="1" stroke-dasharray="2 6" opacity="0.6" />
+                  <circle cx="8" cy="34" r="2.6" fill="var(--emerald)" />
+                  <circle cx="252" cy="34" r="2.6" fill="var(--emerald)" />
+                  <text class="pass-card__plane" font-size="12" fill="var(--peach-ink)">✈</text>
+                </svg>
+              </div>
+              <div class="pass-card__barcode" aria-hidden="true"></div>
+            </div>
+          </article>
+
+          <!-- SG-002 -->
+          <article class="pass-card">
+            <div class="pass-card__stamp" aria-hidden="true">
+              <svg data-stamp viewBox="0 0 96 96" width="72" height="72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="48" cy="48" r="42" stroke="var(--peach)" stroke-width="2.5" />
+                <text x="48" y="53" text-anchor="middle" fill="var(--peach-ink)" font-family="'Space Mono', monospace" font-size="13" font-weight="700" letter-spacing="1">APPROVED</text>
+              </svg>
+            </div>
+            <div class="pass-card__head">
+              <div class="route-header">
+                <span class="route-node">PROBLEM</span>
+                <span class="route-track"><span class="route-plane">✈</span></span>
+                <span class="route-node">SOLUTION</span>
+              </div>
+              <span class="pass-card__code">FLT SG-002</span>
+            </div>
+            <div class="pass-card__perf" aria-hidden="true"></div>
+            <div class="pass-card__body">
+              <h3 class="pass-card__title">Switchboard Voice Facilitator</h3>
+              <p class="pass-card__pitch">
+                A voice-routing concept built to help callers reach the right hospital department
+                more efficiently.
+              </p>
+              <ul class="pass-card__chips">
+                <li>RETELL VOICE AGENT</li>
+                <li>GPT-4.1 INTENT DETECTION</li>
+                <li>ELEVENLABS VOICE</li>
+                <li>NODE.JS · EXPRESS</li>
+                <li>CALL TRANSFER WEBHOOKS</li>
+                <li>BOOSTED KEYWORD ROUTING</li>
+              </ul>
+              <div class="pass-card__arc" aria-hidden="true">
+                <svg viewBox="0 0 260 44" width="100%" height="44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="pass-card__arc-path" d="M8 34 Q 130 -6 252 34" stroke="var(--emerald)" stroke-width="1" stroke-dasharray="2 6" opacity="0.6" />
+                  <circle cx="8" cy="34" r="2.6" fill="var(--emerald)" />
+                  <circle cx="252" cy="34" r="2.6" fill="var(--emerald)" />
+                  <text class="pass-card__plane" font-size="12" fill="var(--peach-ink)">✈</text>
+                </svg>
+              </div>
+              <div class="pass-card__barcode" aria-hidden="true"></div>
+            </div>
+          </article>
+
+          <!-- SG-003 -->
+          <article class="pass-card">
+            <div class="pass-card__stamp" aria-hidden="true">
+              <svg data-stamp viewBox="0 0 96 96" width="72" height="72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="48" cy="48" r="42" stroke="var(--peach)" stroke-width="2.5" />
+                <text x="48" y="53" text-anchor="middle" fill="var(--peach-ink)" font-family="'Space Mono', monospace" font-size="13" font-weight="700" letter-spacing="1">APPROVED</text>
+              </svg>
+            </div>
+            <div class="pass-card__head">
+              <div class="route-header">
+                <span class="route-node">PROBLEM</span>
+                <span class="route-track"><span class="route-plane">✈</span></span>
+                <span class="route-node">SOLUTION</span>
+              </div>
+              <span class="pass-card__code">FLT SG-003</span>
+            </div>
+            <div class="pass-card__perf" aria-hidden="true"></div>
+            <div class="pass-card__body">
+              <h3 class="pass-card__title">SVT Heart Detection iOS App</h3>
+              <p class="pass-card__pitch">
+                A Swift-based mobile app concept focused on supporting supraventricular tachycardia
+                monitoring.
+              </p>
+              <ul class="pass-card__chips">
+                <li>SWIFT · SWIFTUI</li>
+                <li>HEALTHKIT</li>
+                <li>EPISODE DETECTION ENGINE</li>
+                <li>REAL-TIME HR STREAM</li>
+                <li>SWIFT CHARTS</li>
+                <li>SWIFTDATA · XCTEST</li>
+              </ul>
+              <div class="pass-card__arc" aria-hidden="true">
+                <svg viewBox="0 0 260 44" width="100%" height="44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="pass-card__arc-path" d="M8 34 Q 130 -6 252 34" stroke="var(--emerald)" stroke-width="1" stroke-dasharray="2 6" opacity="0.6" />
+                  <circle cx="8" cy="34" r="2.6" fill="var(--emerald)" />
+                  <circle cx="252" cy="34" r="2.6" fill="var(--emerald)" />
+                  <text class="pass-card__plane" font-size="12" fill="var(--peach-ink)">✈</text>
+                </svg>
+              </div>
+              <div class="pass-card__barcode" aria-hidden="true"></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           FINALE — arrival / final destination
+      ================================================================== -->
+      <section id="finale" class="finale" aria-label="Contact">
+        <svg class="finale__bg" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path class="finale__arc" d="M-40 120 Q 400 40 600 350" stroke="var(--emerald)" stroke-width="1" opacity="0.4" />
+          <path class="finale__arc" d="M1240 100 Q 800 60 600 350" stroke="var(--emerald)" stroke-width="1" opacity="0.4" />
+          <path class="finale__arc" d="M-40 640 Q 300 560 600 350" stroke="var(--emerald)" stroke-width="1" opacity="0.4" />
+          <path class="finale__arc" d="M1240 660 Q 900 560 600 350" stroke="var(--emerald)" stroke-width="1" opacity="0.4" />
+          <path class="finale__arc" d="M600 -40 Q 560 160 600 350" stroke="var(--emerald)" stroke-width="1" opacity="0.3" />
+        </svg>
+
+        <div class="finale__content">
+          <span class="finale__pin" aria-hidden="true"></span>
+          <p class="finale__stamp section-label">ARRIVAL — FINAL DESTINATION</p>
+          <h2 class="finale__title">
+            <span class="finale__line">
+              <span class="finale__letter">L</span><span class="finale__letter">E</span
+              ><span class="finale__letter">T</span><span class="finale__letter">'</span
+              ><span class="finale__letter">S</span><span class="finale__letter">&nbsp;</span
+              ><span class="finale__letter">B</span><span class="finale__letter">U</span
+              ><span class="finale__letter">I</span><span class="finale__letter">L</span
+              ><span class="finale__letter">D</span>
+            </span>
+            <span class="finale__line">
+              <span class="finale__letter">W</span><span class="finale__letter">H</span
+              ><span class="finale__letter">A</span><span class="finale__letter">T</span
+              ><span class="finale__letter">'</span><span class="finale__letter">S</span
+              ><span class="finale__letter">&nbsp;</span><span class="finale__letter">N</span
+              ><span class="finale__letter">E</span><span class="finale__letter">X</span
+              ><span class="finale__letter">T</span>
+            </span>
+          </h2>
+
+          <div class="finale__actions">
+            <a class="btn btn--primary" href="#work" data-scroll-to="#work">VIEW MY WORK</a>
+            <a class="btn btn--ghost" href="mailto:sydneygahunia@gmail.com">GET IN TOUCH</a>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="footer__links">
+            <a href="https://www.linkedin.com/in/sydney-gahunia-b9a704318" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+            <a href="mailto:sydneygahunia@gmail.com">EMAIL</a>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">RESUME</a>
+          </div>
+          <p class="footer__copy">© 2026 SYDNEY GAHUNIA — DESIGNED AS A JOURNEY</p>
+        </footer>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

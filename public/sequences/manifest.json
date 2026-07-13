@@ -1,0 +1,4 @@
+{
+  "hero": { "count": 0, "path": "/sequences/hero", "ext": "webp", "pad": 4 },
+  "builder": { "count": 0, "path": "/sequences/builder", "ext": "webp", "pad": 4 }
+}
