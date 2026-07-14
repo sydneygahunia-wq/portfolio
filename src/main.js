@@ -6,7 +6,7 @@
 // choreography. Each player ships with a procedural cinematic scene (globe /
 // command-centre panels) that renders whenever its manifest count is 0 —
 // real frames win automatically when count > 0. Page order: hero, about,
-// stats, work, finale.
+// work, finale.
 // ============================================================================
 
 import './styles/main.css';
@@ -26,7 +26,6 @@ import { initNav, showNav } from './ui/nav.js';
 import { Preloader } from './sections/preloader.js';
 import { initHero, playHeroIntro } from './sections/hero.js';
 import { initAbout } from './sections/about.js';
-import { initStats } from './sections/stats.js';
 import { initWork } from './sections/work.js';
 import { initFinale } from './sections/finale.js';
 
@@ -74,11 +73,10 @@ async function boot() {
   if (builderPlayer) builderPlayer.load();
 
   // 5. Wire section scroll choreography (before revealing so first paint is set).
-  // Init order mirrors DOM order (hero, about, stats, work, finale) so
+  // Init order mirrors DOM order (hero, about, work, finale) so
   // ScrollTrigger registers each section's triggers top-to-bottom.
   initHero({ section: document.getElementById('hero'), player: heroPlayer });
   initAbout({ section: document.getElementById('about'), player: builderPlayer });
-  initStats(document.getElementById('stats'));
   initWork({
     cardsSection: document.getElementById('work')
   });
