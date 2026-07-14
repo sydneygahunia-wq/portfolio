@@ -208,7 +208,7 @@ export function createGlobeScene() {
     if (w === cacheW && h === cacheH) return;
     cacheW = w;
     cacheH = h;
-    cachedCx = w <= 820 ? w * 0.5 : w * 0.62;
+    cachedCx = w * 0.5; // centered at every viewport width
     cachedCy = h * 0.52;
     const R = Math.min(w, h) * 0.35;
 
