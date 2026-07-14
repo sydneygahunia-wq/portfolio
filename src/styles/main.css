@@ -443,7 +443,7 @@ button:focus-visible {
 /* 8. HERO =============================================================== */
 .hero {
   position: relative;
-  height: 300vh; /* pin scroll length */
+  height: 170vh; /* pin scroll length — short enough to reach About quickly */
 }
 .hero__sticky {
   position: sticky;
@@ -488,6 +488,11 @@ button:focus-visible {
 .hero__letter {
   display: inline-block;
   will-change: transform, opacity;
+  /* Pre-intro: hidden via opacity ONLY so first paint never flashes the name.
+     No CSS transform here — GSAP merges existing transforms into its cache as
+     a permanent px offset, which left the letters stranded below their clip
+     mask after the intro. The tween owns the transform channel exclusively. */
+  opacity: 0;
 }
 .hero__subtitle {
   margin-top: 1.6rem;
@@ -501,10 +506,18 @@ button:focus-visible {
   display: inline-block;
   transform-origin: center bottom;
   backface-visibility: hidden;
+  /* Pre-intro: opacity only (see .hero__letter note). */
+  opacity: 0;
 }
 .hero__routeline {
   margin-top: 1.1rem;
   width: min(320px, 70vw);
+}
+/* Pre-intro: route line hidden until the JS draw animation takes over
+   (320 covers the path length; prepDash() sets exact values). */
+.hero__routeline [data-route-line] {
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
 }
 .hero__routeline svg { width: 100%; height: auto; }
 
@@ -840,6 +853,28 @@ button:focus-visible {
   border-radius: 999px;
   padding: 0.3rem 0.6rem;
 }
+/* Repo link on cards that have a public build. ≥44px tap target via padding;
+   negative margin keeps the visual rhythm tight. */
+.pass-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  color: var(--accent-ink);
+  padding: 0.9rem 0;
+  margin: -0.5rem 0 0.4rem;
+  min-height: 44px;
+  transition: color 0.25s ease;
+}
+.pass-card__link:hover { color: var(--cream); }
+.pass-card__link-arrow {
+  display: inline-block;
+  transition: transform 0.25s var(--ease-out);
+}
+.pass-card__link:hover .pass-card__link-arrow { transform: translate(3px, -2px); }
+
 .pass-card__arc {
   margin-bottom: 1.1rem;
 }
@@ -1144,6 +1179,7 @@ button:focus-visible {
   .hero__letter,
   .finale__letter { transform: none !important; opacity: 1 !important; }
   .hero__sub-char { transform: none !important; opacity: 1 !important; }
+  .hero__routeline [data-route-line] { stroke-dashoffset: 0 !important; }
   .about__label,
   .about__body,
   .passport { opacity: 1 !important; visibility: visible !important; transform: none !important; }

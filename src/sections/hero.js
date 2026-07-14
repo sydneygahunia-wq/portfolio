@@ -1,11 +1,12 @@
 // ============================================================================
 // hero.js — pinned 360° orbit hero
 // ----------------------------------------------------------------------------
-// Full-viewport canvas scrubbed by a ~300vh pin. Giant Anton display letters
+// Full-viewport canvas scrubbed by a ~170vh pin. Giant Anton display letters
 // slide up from a clipped baseline on load with a letter-spacing track-in, the
 // Space Mono subtitle does a departure-board character flip, and an emerald
-// route line draws beneath it. As the pin scrolls: canvas render(progress),
-// the title parallaxes up + tracks wider, and the HUD fades.
+// route line draws beneath it. As the pin scrolls only the globe moves:
+// canvas render(progress) spins it while the title stays put; the HUD fades
+// early and the whole overlay fades out just before hand-off.
 // ============================================================================
 
 import { gsap } from 'gsap';
@@ -17,7 +18,6 @@ export function initHero({ section, player, reduced = prefersReducedMotion }) {
   const subChars = section.querySelectorAll('.hero__sub-char');
   const routePath = section.querySelector('.hero__routeline [data-route-line]');
   const hud = section.querySelectorAll('.hud');
-  const title = section.querySelector('.hero__title');
   const content = section.querySelector('.hero__content');
 
   // --- Scroll-driven pin: scrub the sequence + parallax the title ---
@@ -40,18 +40,8 @@ export function initHero({ section, player, reduced = prefersReducedMotion }) {
     }
   });
 
-  // Parallax the title up and track its letter-spacing wider as we scroll.
-  gsap.to(title, {
-    yPercent: -18,
-    letterSpacing: '0.04em',
-    ease: 'none',
-    scrollTrigger: {
-      trigger: section,
-      start: 'top top',
-      end: 'bottom bottom',
-      scrub: 1
-    }
-  });
+  // The title intentionally does NOT move with scroll — only the globe spins.
+  // (A parallax here previously drifted the name upward during the scrub.)
 
   // Fade the HUD out over the first third of the pin.
   gsap.to(hud, {
